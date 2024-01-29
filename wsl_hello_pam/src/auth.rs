@@ -232,7 +232,7 @@ fn authenticate_via_hello(pamh: *mut pam_handle_t) -> Result<i32, HelloAuthentic
     fs::remove_file(challenge_tmpfile_path)?;
 
     match auth_res.status.code() {
-        Some(code) if code == 0 => { /* Success */ }
+        Some(0) => { /* Success */ }
         Some(_) => {
             return Err(HelloAuthenticationError::HelloAuthenticationFail(
                 String::from_utf8(auth_res.stdout)
