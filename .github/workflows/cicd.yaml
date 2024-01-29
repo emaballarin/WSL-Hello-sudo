@@ -33,7 +33,7 @@ jobs:
   lint-bash:
     name: "Run bash linter"
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
@@ -44,7 +44,7 @@ jobs:
   build-pam-module:
     name: "Build PAM module"
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
@@ -89,7 +89,7 @@ jobs:
   release:
     name: "Release"
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     needs: [build-pam-module, build-windows-binary]
 
