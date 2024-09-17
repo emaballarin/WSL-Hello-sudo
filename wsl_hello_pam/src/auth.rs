@@ -65,6 +65,7 @@ fn get_user(pamh: *mut pam_handle_t, prompt: Option<&str>) -> Result<Cow<str>, i
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 enum ConfigError {
     Io(io::Error),
     Toml(toml::de::Error),
@@ -126,6 +127,7 @@ fn get_win_mnt() -> Result<String, ConfigError> {
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 enum HelloAuthenticationError {
     GetUserError(i32),
     ConfigError(ConfigError),
